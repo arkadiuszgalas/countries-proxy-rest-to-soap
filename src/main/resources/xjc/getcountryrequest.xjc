@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.1">
+    <jaxb:bindings schemaLocation="../wsdl/getcountryrequest.wsdl"
+                   node="/wsdl:definitions/wsdl:types/xsd:schema[@targetNamespace='http://spring.io/guides/gs-producing-web-service']">
+
+        <jaxb:bindings node="xsd:element[@name='getCountryRequest']">
+            <jaxb:class name="GetCountryRequestItems"/>
+        </jaxb:bindings>
+		
+        <jaxb:bindings node="xsd:element[@name='getCountryResponse']">
+            <jaxb:class name="GetCountryResponseItems"/>
+        </jaxb:bindings>
+		
+    </jaxb:bindings>
+</jaxb:bindings>

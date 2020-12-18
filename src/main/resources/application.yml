@@ -1,0 +1,20 @@
+pl.common.adap.microservice.countries.client.getcountry:
+  endpoint.url: http://127.0.0.1:8080/ws
+  connection.timeout: 500
+  read.timeout: 500
+---
+server:
+  address: 127.0.0.1
+  port: 9001
+---
+spring:
+  application:
+    name: countries-proxy-rest-to-soap
+  resources:
+    add-mappings: false
+  jackson:
+    default-property-inclusion: NON_NULL
+---
+eureka:
+  client:
+    enabled: false
