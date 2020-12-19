@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import pl.common.adap.microservice.countries.config.BadRequestException;
 import pl.common.adap.microservice.countries.service.CountriesService;
 
 @RestController
@@ -20,7 +23,14 @@ public class CountriesController {
     }
 
     @PostMapping("/getcountry")
+    @ResponseBody
     public GetCountryResponseItems getCountry(@RequestBody GetCountryRequestItems request) {
+
+        if (request.getIsocode() == null) {
+            String message = "Empty isocode request exception";
+            throw new BadRequestException(message);
+        }
+
         return customerService.getCountry(request);
     }
 }
