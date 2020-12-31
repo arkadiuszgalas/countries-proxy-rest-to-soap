@@ -116,13 +116,6 @@
 
         <!--Microservice dependencies-->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.2</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>3.3.1</version>
